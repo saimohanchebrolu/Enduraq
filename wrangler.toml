@@ -1,0 +1,6 @@
+# Cloudflare Pages configuration
+name = "enduraq-technologies"
+pages_build_output_dir = "out"
+compatibility_date = "2025-09-01"
+# Required: lets the SMTP client (worker-mailer) open TCP connections from the Pages Function.
+compatibility_flags = ["nodejs_compat"]

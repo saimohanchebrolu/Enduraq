@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white text-ink-900 antialiased;
+  }
+  ::selection {
+    @apply bg-brand-300/40;
+  }
+  :focus-visible {
+    outline: 2px solid #5f8bff;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-content px-6 lg:px-8;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-semibold transition-all duration-200;
+  }
+  .btn-primary {
+    @apply btn bg-brand-500 text-white shadow-glow hover:bg-brand-600 active:bg-brand-700;
+  }
+  .btn-outline-light {
+    @apply btn border border-white/25 text-white hover:bg-white/10;
+  }
+  .btn-outline-dark {
+    @apply btn border border-ink-900/15 text-ink-900 hover:bg-ink-900/[0.04];
+  }
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full border border-brand-500/20 bg-brand-50 px-3 py-1 text-xs font-semibold tracking-wide text-brand-700;
+  }
+  .eyebrow-dark {
+    @apply inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-semibold tracking-wide text-brand-100;
+  }
+  .card {
+    @apply rounded-lg border border-ink-900/[0.06] bg-white shadow-card transition-all duration-300;
+  }
+  .card:hover {
+    @apply shadow-cardHover -translate-y-0.5;
+  }
+  .section {
+    @apply py-8 lg:py-12;
+  }
+  .section + .section {
+    padding-top: 1.5rem;
+  }
+  @media (min-width: 1024px) {
+    .section + .section {
+      padding-top: 2rem;
+    }
+  }
+  .home-page .home-services-section {
+    padding-top: 1rem;
+  }
+  .home-page .home-process-section {
+    padding-bottom: 1rem;
+  }
+  .home-page > section:last-child {
+    padding-top: 1rem;
+  }
+  .hero-backdrop {
+    background:
+      radial-gradient(ellipse 46% 82% at 88% 42%, rgba(0, 103, 255, 0.4), transparent 72%),
+      radial-gradient(ellipse 58% 23% at 78% 100%, rgba(0, 113, 255, 0.3), transparent 76%),
+      linear-gradient(108deg, #080e19 0%, #071329 57%, #08172b 100%);
+  }
+  .hero-horizon {
+    position: absolute;
+    top: 72%;
+    right: 0;
+    left: 38%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(79, 157, 255, 0.75), transparent);
+    box-shadow: 0 0 18px 2px rgba(30, 119, 255, 0.5);
+  }
+  .hero-copy-shade {
+    background: linear-gradient(
+      90deg,
+      rgba(5, 10, 26, 0.94) 0%,
+      rgba(5, 10, 26, 0.82) 40%,
+      rgba(5, 10, 26, 0.34) 70%,
+      rgba(5, 10, 26, 0.04) 100%
+    );
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
